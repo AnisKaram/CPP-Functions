@@ -1,2 +1,2 @@
 # CPP-Functions
- Example of how C++ functions work
+This is a small example of how functions are used in C++
