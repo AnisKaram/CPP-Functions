@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Simple function decleration
+// Simple Function Decleration
 void myFunction();
 
 // One Argument
@@ -11,6 +11,9 @@ void introducingMySelf(string name);
 // Default values, works from RIGHT to LEFT
 // ! WE CAN'T SET DEFAULT VALUE for middle argument or left argument before setting for the last one
 void introduceYourSelf(string name, int age = 0, double height = 0.0);
+
+// Prime number Function Definitions
+bool checkIfPrimeNumber(int number);
 
 int main()
 {
@@ -31,10 +34,29 @@ int main()
 
 	introduceYourSelf(n, a, h);
 
+
+
+	/* START: Prime Number */
+
+	int number;
+
+	std::cout << "Enter a number: ";
+	std::cin >> number;
+
+	bool isPrimeNumberFlag = checkIfPrimeNumber(number);
+
+	if (isPrimeNumberFlag)
+		std::cout << number << " is a prime number!" << std::endl;
+	else
+		std:cout << number << " is not a prime number!" << std::endl;
+
+	/*END: Prime Number */
+
+
 	system("pause");
 }
 
-// Simple function defenition
+// Simple function definition
 void myFunction()	
 {
 	std::cout << "Hello and Welcome to my first functon!" << std::endl;
@@ -53,4 +75,20 @@ void introduceYourSelf(string name, int age, double height)
 		std::cout << "My name is " << name << ", " << age << " years old, and " << height << " height" << std::endl;
 	else
 		std::cout << "My name is " << name << std::endl;
+}
+
+// Prime Number 
+bool checkIfPrimeNumber(int number)
+{
+	//bool isPrimeNumberFlag = true;
+
+	for (int i = 2; i < number; i++)
+	{
+		if (number % i == 0)
+			//isPrimeNumberFlag = false;
+			//break;
+			return false;
+	}
+	//return isPrimeNumberFlag;
+	return true;
 }
