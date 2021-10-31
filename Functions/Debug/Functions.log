@@ -1,3 +1,4 @@
 ﻿  Application.cpp
-G:\DATA\C++ Tutorials\Functions\CPP-Functions\Functions\Application.cpp(51,6): warning C4102: 'std': unreferenced label
+G:\DATA\C++ Tutorials\Functions\CPP-Functions\Functions\Application.cpp(64,76): warning C4305: 'argument': truncation from 'double' to 'float'
+G:\DATA\C++ Tutorials\Functions\CPP-Functions\Functions\Application.cpp(56,6): warning C4102: 'std': unreferenced label
   Functions.vcxproj -> G:\DATA\C++ Tutorials\Functions\CPP-Functions\Functions\Debug\Functions.exe
