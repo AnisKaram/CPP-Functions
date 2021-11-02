@@ -1,2 +1,2 @@
 # CPP-Functions
-Function in C++
+Functions in C++
