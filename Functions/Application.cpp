@@ -20,6 +20,16 @@ int sumOverloading(int numberOne, int numberTwo);
 double sumOverloading(double numberOne, double numberTwo);
 float sumOverloading(float numberOne, float numberTwo, float numberThree);
 
+// Recursion 
+// Sum Numbers between (m & n)
+// Recursion Function Declarartion
+int RecursiveSum(int smallerNumber, int biggerNumber);
+
+// Recursion
+// Factorial of a number 
+// Recursion Function Declararion
+int RecursiveFactorial(int numberToFactorial);
+
 int main()
 {
 	string n;
@@ -65,8 +75,38 @@ int main()
 
 	/*END: Function Overloading*/
 
+	/*START: Sum Recursion*/
+
+	int smallerNumber = 2, biggerNumber = 4, sum = 0;
+
+	// Sum solved in a forloop then recursive
+	//for (int i = smallerNumber; i<= biggerNumber; i++)
+	//{
+	//	sum += i;
+	//}
+
+	std::cout << "The sum is " << RecursiveSum(smallerNumber, biggerNumber) << std::endl;
+
+	/*END: Sum Recursion*/
+
+	/*START: Factorial Recursion*/
+
+	int numberToFact = 5;
+	//int resultOfFact = 1;
+	//int count = 1;
+
+	//for (int i = 2; i <= numberToFact ; i++)
+	//{
+	//	resultOfFact *= i;
+	//}
+
+	std::cout << numberToFact << "! = " << RecursiveFactorial(numberToFact) << std::endl;
+
+	/*END: Factorial Recusrion*/
+
 
 	system("pause");
+
 }
 
 // Simple function Definition
@@ -128,4 +168,19 @@ double sumOverloading(double numberOne, double numberTwo)
 float sumOverloading(float numberOne, float numberTwo, float numberThree)
 {
 	return numberOne + numberTwo + numberThree;
+}
+
+int RecursiveSum(int smallerNumber, int biggerNumber)
+{
+	if (biggerNumber == smallerNumber)	// Base Case to break the recursion
+		return biggerNumber;		   // Important part in recursive function, to avoid Stack Overflow
+
+	return smallerNumber + RecursiveSum(smallerNumber + 1, biggerNumber);
+}
+
+int RecursiveFactorial(int numberToFactorial)
+{
+	if (numberToFactorial > 1)
+		return numberToFactorial * RecursiveFactorial(numberToFactorial - 1); // 5-1, 4-1, until >1
+	else return 1;
 }
