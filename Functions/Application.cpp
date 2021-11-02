@@ -30,6 +30,12 @@ int RecursiveSum(int smallerNumber, int biggerNumber);
 // Recursion Function Declararion
 int RecursiveFactorial(int numberToFactorial);
 
+// Generic Function and Template
+// Swap any data type
+template<typename T>
+void Swap(T& firstInput, T& secondInput);
+
+
 int main()
 {
 	string n;
@@ -104,9 +110,23 @@ int main()
 
 	/*END: Factorial Recusrion*/
 
+	/*START: Generic Function & Template*/
+
+	int firstInput = 5, secondInput = 10;
+	char inputOne = 'A', inputTwo = 'B';
+	
+	std::cout << "First Integer Input: " << firstInput << " - Second Integer Input: " << secondInput << std::endl;
+	Swap<int>(firstInput, secondInput);	
+	std::cout << "First Interger Input: " << firstInput << " - Second Integer Input: " << secondInput << std::endl;
+
+	std::cout << "First Character Input: " << inputOne << " - Second Character Input: " << inputTwo << std::endl;
+	Swap<char>(inputOne, inputTwo);
+	std::cout << "First Character Input: " << inputOne << " - Second Character Input: " << inputTwo << std::endl;
+
+	/*END: Generic Function & Template*/
+
 
 	system("pause");
-
 }
 
 // Simple function Definition
@@ -146,7 +166,7 @@ bool checkIfPrimeNumber(int number)
 	return true;
 }
 
-// Function Overloading Definition
+// Function integer Overloading Definition
 int sumOverloading(int numberOne, int numberTwo)
 {
 	int _result;
@@ -156,6 +176,7 @@ int sumOverloading(int numberOne, int numberTwo)
 	return _result;
 }
 
+// Function double Overloading Definition
 double sumOverloading(double numberOne, double numberTwo)
 {
 	double _result;
@@ -165,11 +186,13 @@ double sumOverloading(double numberOne, double numberTwo)
 	return _result;
 }
 
+// Function float Overloading Definition
 float sumOverloading(float numberOne, float numberTwo, float numberThree)
 {
 	return numberOne + numberTwo + numberThree;
 }
 
+// Sum Function Recursive Definition
 int RecursiveSum(int smallerNumber, int biggerNumber)
 {
 	if (biggerNumber == smallerNumber)	// Base Case to break the recursion
@@ -178,9 +201,21 @@ int RecursiveSum(int smallerNumber, int biggerNumber)
 	return smallerNumber + RecursiveSum(smallerNumber + 1, biggerNumber);
 }
 
+// Factorial Function Recursive Definition
 int RecursiveFactorial(int numberToFactorial)
 {
 	if (numberToFactorial > 1)
 		return numberToFactorial * RecursiveFactorial(numberToFactorial - 1); // 5-1, 4-1, until >1
 	else return 1;
 }
+
+// Generic Swap Function Definition with template 
+template<typename T>
+void Swap(T& firstInput, T& secondInput)
+{
+	T temp = firstInput; // temp = 5
+
+	firstInput = secondInput; // first = second
+	secondInput = temp; // second = 5
+}
+
